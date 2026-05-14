@@ -21,10 +21,12 @@ RUN if [ "$USE_CN_MIRROR" = "true" ]; then \
 # - curl: for health checks and downloads
 # - ffmpeg: for video/audio processing
 # - fonts-noto-cjk: for CJK character support
+# - git: occasionally needed for some pip package installs from source
 RUN apt-get update && apt-get install -y \
     curl \
     ffmpeg \
     fonts-noto-cjk \
+    git \
     && rm -rf /var/lib/apt/lists/*
 
 # Install uv package manager
